@@ -4,10 +4,9 @@ RUN apt update -y
 RUN apt install python3 python3-pip pipenv -y
 
 WORKDIR /app
-COPY . /app/
+COPY . .
 RUN pipenv install -r requirements.txt
 
-EXPOSE 80
+EXPOSE 8080
 
-
-CMD pipenv run python3 https://github.com/ShriRadhey-Mishra/Lab8/main.py
+CMD ["pipenv", "run", "python3", "main.py"]
